@@ -1,0 +1,71 @@
+#root{
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: #2E8BC0;
+}
+
+/* ------------------------- MENU BAR ------------------------- */
+
+#menuBar{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
+}
+
+#welcomeMsgDiv{
+    margin-left: 3vw;
+    color: black;
+}
+
+#logoutBtn{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    padding: 1%;
+    border-radius: 50%;
+    margin-right: 3vw;
+}
+
+/* -------------------------- ACTUAL GAME -------------------------- */
+
+#game-area{
+    height: auto;
+    width: 30vw;
+    margin-top: 10vh;
+}
+
+#gamerMonitor{
+    color: white;
+}
+
+#gamerMonitor h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 3% 0% 3% 0%;
+}
+
+#gamerMonitor span{
+    display: inline-block;
+}
+
+#user-options{
+    display: flex;
+    justify-content: space-between;
+}
+
+#user-options button{
+    width: 9vw;
+    margin-top: 8vh;
+    font-size: 1.2rem;
+}
+
+/* ------------------------- EXTRA CLASSES ------------------------- */
+
+.notVisible{
+    visibility: none !important;
+}

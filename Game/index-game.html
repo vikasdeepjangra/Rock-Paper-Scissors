@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Rock-Paper-Scissors</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="style-game.css">
+        <link rel="icon" type="image/x-icon" href="../Resources/award-fill.svg">
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <div id="menuBar">
+
+            <div id="welcomeMsgDiv">
+                <h3>Hey,<br><span id="welcomeMsg"><h3>
+            </div>
+
+            <div id="logoutBtn" onclick="logOut()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                </svg>
+            </div>
+
+        </div>        
+
+        <!-------------------------- ACTUAL GAME -------------------------->
+        <div id="root" class="d-flex flex-column justify-content-center align-items-center">
+
+            <div id="game-area">    
+                <div id="gamerMonitor"> 
+                    <h3>Computer Choice:<span id="computer-choice"></span></h3>
+                    <h3>User Choice:<span id="user-choice"></span></h3>
+                    <h3>Result:<span id="result-here"></span></h3>
+                </div>
+
+                <div id="user-options">
+                    <button type="button" class="btn btn-light options" id="Rock">Rock &#9994;</button>
+                    <button type="button" class="btn btn-light options" id="Paper">Paper &#128075;</button>
+                    <button type="button" class="btn btn-light options" id="Scissors">Scissors &#9996;</button>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="script-game.js"></script>
+
+</html>

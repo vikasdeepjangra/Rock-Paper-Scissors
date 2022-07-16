@@ -1,0 +1,71 @@
+#root{
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: #2E8BC0;
+}
+
+#game-title{
+    width: 100vw;
+    display: block;
+    font-size: 3rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+#login-form{
+    height: auto;
+    width: 30vw;
+    border-radius: 20px;
+    background-color: black;
+    padding: 3%;
+    position: absolute;
+    margin-top: 7vh;
+    color: #2E8BC0;
+    z-index: 12;
+
+}
+
+.form-group{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: #2E8BC0;
+}
+
+#loginBtn{
+    margin-top: 2vh;
+    width: 100%;
+}
+
+#account-exists, #create-account{
+    all: unset;
+    cursor: pointer;
+}
+
+#signUp-form{
+    height: auto;
+    width: 30vw;
+    border-radius: 20px;
+    padding: 1% 3%; 
+    background-color: white;
+    position: absolute;
+    color: #2E8BC0;
+    margin-top: 10vh;
+    visibility: hidden;
+}
+
+#signUpBtn{
+    width: 100%;
+}
+
+/* ------------------------- EXTRA CLASSES ------------------------- */
+
+.visible{
+    visibility: visible !important;
+}
+
+.notVisible{
+    visibility: none !important;
+}

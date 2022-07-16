@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Rock-Paper-Scissors</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="Resources/award-fill.svg">
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <div id="game-title">&#9994; • &#128075; • &#9996;</div>
+
+        <div id="root" class="d-flex flex-column justify-content-center align-items-center">
+
+            <!--------------------------- LOGIN FORM --------------------------->
+            <div id="login-form"><form>
+
+                <div class="form-group" id="loginEmailArea">
+                    <label for="loginEmail" class="h5">Username</label>
+                    <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="E-mail">
+                </div>
+                <div class="form-group" id="loginPasswordArea">
+                    <label for="loginPassword" class="h5">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="loginBtn" onclick="logInFunction()">Login</button>
+                </div>
+
+                <div id="create-account">
+                    <p onclick="showSignup()">Don't Have an Account? Sign Up.</p>
+                </div>
+
+            </form></div>
+
+            <!--------------------------- SIGNUP FORM --------------------------->
+            <div id="signUp-form" class="scale-up-ver-center"><form>
+
+                <div class="form-group" id="usernameArea">
+                    <label for="userNAME" class="h5">Username</label>
+                    <input type="text" class="form-control" id="userNAME" aria-describedby="emailHelp" placeholder="Full Name">
+                </div>
+                <div class="form-group" id="signupEmailArea">
+                    <label for="signUpEmail" class="h5">Email</label>
+                    <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="E-mail">
+                </div>
+                <div class="form-group" id="signupPasswordArea">
+                    <label for="signUpPassword" class="h5">Password</label>
+                    <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+                </div>
+                <div id="btnForLogin" class="form-group">
+                    <button type="button" class="btn btn-primary" id="signUpBtn" onclick="signUpFunction()">Sign Up</button>
+                </div>
+
+                <div id="account-exists">
+                    <p onclick="showLogin()">Already Have an Account? Log In.</p>
+                </div>
+
+            <form></div>
+
+
+        </div>
+
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="script.js"></script>
+</html>
