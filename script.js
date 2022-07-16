@@ -64,7 +64,7 @@ firebase.auth().onAuthStateChanged((user) => {
     
     if (user) {
         //console.log("User Logged In.");
-        window.location = "../Game/index-game.html";
+        window.location = "/Rock-Paper-Scissors/Game/index-game.html";
     } else {
         //console.log("User Logged Out.");
     }
