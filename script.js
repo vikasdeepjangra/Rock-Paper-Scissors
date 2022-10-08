@@ -9,62 +9,62 @@ const firebaseApp = firebase.initializeApp({
 
 const auth = firebaseApp.auth();
 
-function showSignup(){
+function showSignup() {
     $("#login-form").hide('normal');
     $("#signUp-form").addClass("visible");
 }
 
-function showLogin(){
+function showLogin() {
     $("#signUp-form").removeClass("visible");
     $("#login-form").show('normal');
 }
 
-function signUpFunction(){
+function signUpFunction() {
 
     const email = document.getElementById("signUpEmail").value;
     const password = document.getElementById("signUpPassword").value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function(result) {
-        return result.user.updateProfile({
-          displayName: document.getElementById("userNAME").value
+        .then(function (result) {
+            return result.user.updateProfile({
+                displayName: document.getElementById("userNAME").value
+            })
         })
-    })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorCode, errorMessage);
-    });
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorCode, errorMessage);
+        });
 
 }
 
-function logInFunction(){
+function logInFunction() {
 
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
 
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-        var user = userCredential.user;
-        //alert("User Logged in Successfully!");
-    })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if(errorCode == "auth/user-not-found"){
-            alert("User not found. Try Signing Up.");
-        }
-        if(errorCode == "auth/wrong-password"){
-            alert("Incorrect Password.");
-        }
-    });
+        .then((userCredential) => {
+            var user = userCredential.user;
+            //alert("User Logged in Successfully!");
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == "auth/user-not-found") {
+                alert("User not found. Try Signing Up.");
+            }
+            if (errorCode == "auth/wrong-password") {
+                alert("Incorrect Password.");
+            }
+        });
 }
 
 firebase.auth().onAuthStateChanged((user) => {
-    
+
     if (user) {
         //console.log("User Logged In.");
-        window.location = "/Rock-Paper-Scissors/Game/index-game.html";
+        window.location = "/Game/index-game.html";
     } else {
         //console.log("User Logged Out.");
     }

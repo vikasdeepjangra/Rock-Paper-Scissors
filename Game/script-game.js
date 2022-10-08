@@ -12,11 +12,11 @@ var database = firebase.database();
 const auth = firebaseApp.auth();
 
 firebase.auth().onAuthStateChanged((user) => {
-    
+
     if (user) {
         //console.log("User Logged In.");
         //console.log(firebase.auth().currentUser);
-        document.getElementById("welcomeMsg").innerHTML = firebase.auth().currentUser.displayName+"!";
+        document.getElementById("welcomeMsg").innerHTML = firebase.auth().currentUser.displayName + "!";
         document.getElementById("welcomeMsg").style.color = "white";
     } else {
         //console.log("User Logged Out.");
@@ -25,8 +25,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 });
 
-function logOut(){
- 
+function logOut() {
+
     firebase.auth().signOut().then(() => {
         //console.log("Logged Out.");        
     }).catch((error) => {
@@ -43,7 +43,7 @@ const options = document.querySelectorAll(".options");
 let userChoice;
 let computerChoice;
 
-options.forEach(possibleOption => possibleOption.addEventListener('click', (e) =>{
+options.forEach(possibleOption => possibleOption.addEventListener('click', (e) => {
 
     userChoice = e.target.id;
     userChoiceDisplay.innerHTML = "&nbsp&nbsp" + userChoice;
@@ -52,16 +52,16 @@ options.forEach(possibleOption => possibleOption.addEventListener('click', (e) =
     getResult();
 }));
 
-function generateComputerChoice(){
+function generateComputerChoice() {
     const randomNumber = Math.floor(Math.random() * options.length) + 1;
 
-    if(randomNumber === 1){
+    if (randomNumber === 1) {
         computerChoice = 'Rock'
     }
-    if(randomNumber === 2){
+    if (randomNumber === 2) {
         computerChoice = 'Paper'
     }
-    if(randomNumber === 3){
+    if (randomNumber === 3) {
         computerChoice = 'Scissors'
     }
 
@@ -69,38 +69,38 @@ function generateComputerChoice(){
     computerChoiceDisplay.style.color = "black";
 }
 
-function getResult(){
+function getResult() {
 
     //DRAW
-    if(computerChoice === userChoice){
+    if (computerChoice === userChoice) {
         resultHere.innerHTML = "&nbsp&nbsp Draw!";
         resultHere.style.color = "black";
     }
 
     //COMPUTER WIN
-    if(computerChoice === "Paper" && userChoice === "Rock"){
+    if (computerChoice === "Paper" && userChoice === "Rock") {
         resultHere.innerHTML = "&nbsp&nbsp You Lost.";
         resultHere.style.color = "maroon";
     }
-    if(computerChoice === 'Scissors' && userChoice === 'Paper'){
+    if (computerChoice === 'Scissors' && userChoice === 'Paper') {
         resultHere.innerHTML = "&nbsp&nbsp You Lost.";
         resultHere.style.color = "maroon";
     }
-    if(computerChoice === 'Rock' && userChoice === 'Scissors'){
+    if (computerChoice === 'Rock' && userChoice === 'Scissors') {
         resultHere.innerHTML = "&nbsp&nbsp You Lost.";
         resultHere.style.color = "maroon";
     }
 
     //USER WIN
-    if(computerChoice === 'Rock' && userChoice === 'Paper'){
+    if (computerChoice === 'Rock' && userChoice === 'Paper') {
         resultHere.innerHTML = "&nbsp&nbsp You Won.";
         resultHere.style.color = "green";
     }
-    if(computerChoice === 'Paper' && userChoice === 'Scissors'){
+    if (computerChoice === 'Paper' && userChoice === 'Scissors') {
         resultHere.innerHTML = "&nbsp&nbsp You Won.";
         resultHere.style.color = "green";
     }
-    if(computerChoice === 'Scissors' && userChoice === 'Rock'){
+    if (computerChoice === 'Scissors' && userChoice === 'Rock') {
         resultHere.innerHTML = "&nbsp&nbsp You Won.";
         resultHere.style.color = "green";
     }
